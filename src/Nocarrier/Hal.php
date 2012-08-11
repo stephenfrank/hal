@@ -147,6 +147,17 @@ class Hal
         return $renderer->render($this, $pretty);
     }
 
+    /**
+     * asArray
+     * Return the current object in a application/hal+json format (links and resources)
+     *
+     * @return string
+     */
+    public function asArray($pretty=false)
+    {
+        $renderer = new HalArrayRenderer();
+        return $renderer->render($this, $pretty);
+    }
 
     /**
      * asXml
